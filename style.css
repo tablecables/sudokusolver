@@ -1,0 +1,70 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    margin: 20px auto;
+    width: 450px;
+    height: 450px;
+    border-collapse: collapse;
+    border-top: 3px solid black; /* Thicker top border for the grid */
+    border-left: 3px solid black; /* Thicker left border for the grid */
+}
+
+#sudoku-grid input {
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    text-align: center;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+
+#solve-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: large;
+}
+
+#reset-btn {
+    margin-top: 10px;
+    padding: 5px 15px;
+    font-size: medium;
+    /* Add any additional styling as needed */
+}
+
+/* Thicker right borders for every third cell */
+#sudoku-grid input:nth-child(3n) {
+    border-right: 3px solid black;
+}
+
+/* Thicker bottom borders for the 27th, 54th, and 81st cells */
+#sudoku-grid input:nth-child(n+19):nth-child(-n+27),
+#sudoku-grid input:nth-child(n+46):nth-child(-n+54),
+#sudoku-grid input:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid black;
+}
+
+.original-input {
+    color: black; /* or any color you prefer for original input */
+}
+
+.solved-input {
+    color: blue; /* or any color you prefer for solved cells */
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: large;
+}
