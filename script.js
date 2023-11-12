@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById('sudoku-grid');
     for (let i = 0; i < 81; i++) {
         let input = document.createElement('input');
-        input.type = 'text';
+        input.type = 'number';
         input.maxLength = 1;
+        input.min = '1';
+        input.max = '9';
         input.oninput = validateInput;
         grid.appendChild(input);
     }
@@ -161,4 +163,41 @@ function resetGrid() {
         input.value = ''; // Clear the value
         input.classList.remove('solved-input', 'original-input'); // Remove any specific styling
     });
+}
+
+document.getElementById('hint-btn').addEventListener('click', function() {
+    giveHint();
+});
+
+function giveHint() {
+    const grid = getInputData(); // Get current grid state
+    const solutionGrid = JSON.parse(JSON.stringify(grid)); // Create a copy for the solution
+
+    if (solveSudoku(solutionGrid)) { // Solve the puzzle in the background
+        const emptyCells = [];
+        grid.forEach((row, rowIndex) => {
+            row.forEach((cell, colIndex) => {
+                if (cell === 0) {
+                    emptyCells.push({ rowIndex, colIndex });
+                }
+            });
+        });
+
+        if (emptyCells.length > 0) {
+            const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            const hintValue = solutionGrid[randomCell.rowIndex][randomCell.colIndex];
+            updateCellUI(randomCell.rowIndex, randomCell.colIndex, hintValue);
+        } else {
+            alert('No more hints available.');
+        }
+    } else {
+        alert('Puzzle cannot be solved.');
+    }
+}
+
+function updateCellUI(row, col, num) {
+    const cellIndex = row * 9 + col;
+    const cell = document.querySelector(`#sudoku-grid input:nth-child(${cellIndex + 1})`);
+    cell.value = num;
+    cell.classList.add('hint-input'); // Highlight the cell with a hint
 }

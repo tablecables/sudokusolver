@@ -4,35 +4,41 @@ body {
 }
 
 #sudoku-grid {
+    max-width: 100vw;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     margin: 20px auto;
-    width: 450px;
-    height: 450px;
-    border-collapse: collapse;
-    border-top: 3px solid black; /* Thicker top border for the grid */
-    border-left: 3px solid black; /* Thicker left border for the grid */
+    border-collapse: collapse;    
 }
 
 #sudoku-grid input {
-    width: 100%;
-    height: 100%;
-    font-size: large;
+    width: 10vw;
+    height: 10vw;
+    padding-bottom: 11%; /* Adjusted for aspect ratio */
+    padding-top: 11%;
+    font-size: 5vw; /* Responsive font size */
     text-align: center;
     border: 1px solid grey;
     box-sizing: border-box;
 }
 
-#solve-btn {
+#hint-btn {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: large;
+    padding: 5px 15px;
+    font-size: 5vw;
+}
+
+#solve-btn {
+    margin-top: 10px;
+    padding: 5px 15px;
+    font-size: 5vw;
 }
 
 #reset-btn {
     margin-top: 10px;
     padding: 5px 15px;
-    font-size: medium;
+    font-size: 5vw;
     /* Add any additional styling as needed */
 }
 
@@ -64,7 +70,28 @@ body {
 }
 
 .button-container button {
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    font-size: large;
+    padding: 4vw 8vw; /* Adjusted padding */
+    font-size: 7vw; /* Responsive font size */
+    margin-bottom: 2vw; /* Space between buttons */
+    min-width: 60vw; /* Minimum width for larger touch area */
+    min-height: 8vw; /* Minimum height to ensure buttons are easily tappable */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f0f0f0; /* Light background color */
+    border: 1px solid #ccc; /* Border to define the buttons */
+    cursor: pointer; /* Cursor style for clickable elements */
+}
+
+
+@media (min-width: 600px) {
+    .button-container button {
+        padding: 15px 30px; /* Comfortable padding for desktop */
+        font-size: 7vw; /* Larger fixed font size for readability */
+        min-width: 200px; /* Adjusted minimum width for proportion */
+        margin-bottom: 10px; /* Consistent spacing between buttons */
+    }
+}
+
+.hint-input {
+    background-color: #ffff99; /* Yellow background for visibility */
+    color: green; /* Different text color if needed */
 }
