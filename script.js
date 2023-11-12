@@ -161,9 +161,10 @@ function resetGrid() {
     const inputs = document.querySelectorAll('#sudoku-grid input');
     inputs.forEach(input => {
         input.value = ''; // Clear the value
-        input.classList.remove('solved-input', 'original-input'); // Remove any specific styling
+        input.classList.remove('solved-input', 'original-input', 'hint-input'); // Remove classes for styling solved cells, original input cells, and hint cells
     });
 }
+
 
 document.getElementById('hint-btn').addEventListener('click', function() {
     giveHint();
