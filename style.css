@@ -95,3 +95,10 @@ body {
     background-color: #ffff99; /* Yellow background for visibility */
     color: green; /* Different text color if needed */
 }
+
+.banner-image {
+    width: 50%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes any extra space around the image */
+    margin: 20px auto; /* Space between the banner and the title */
+}
