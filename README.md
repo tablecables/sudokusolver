@@ -1,4 +1,4 @@
-# Sudoku Solver
+# [Sudoku Solver](https://sudokusolver-cg.replit.app/)
 
 ## Introduction
 A simple, web-based Sudoku Solver. This is my first personal project/app, designed to solve Sudoku puzzles interactively. This uses the standard "backtracking" algorithm to solve the puzzle in JavaScript. Basically a brute force method, but runs quick enough that I don't notice any delay.
@@ -24,6 +24,6 @@ A simple, web-based Sudoku Solver. This is my first personal project/app, design
 - HTML
 - CSS
 - JavaScript
-- 
+
 ## Screenshots
 ![Screenshot](images/screenshot.png)
