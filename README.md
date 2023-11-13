@@ -1,12 +1,7 @@
 # Sudoku Solver
 
 ## Introduction
-A simple, web-based Sudoku Solver. This is my first personal project/app, designed to solve Sudoku puzzles interactively. This uses the standard "backtesting" algorithm to solve the puzzle in JavaScript.
-
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
+A simple, web-based Sudoku Solver. This is my first personal project/app, designed to solve Sudoku puzzles interactively. This uses the standard "backtracking" algorithm to solve the puzzle in JavaScript. Basically a brute force method, but runs quick enough that I don't notice any delay.
 
 ## Features
 - Interactive Sudoku grid to input puzzles.
@@ -21,5 +16,14 @@ A simple, web-based Sudoku Solver. This is my first personal project/app, design
 3. Use 'Solve' to find the solution for the entire puzzle.
 4. 'Reset' clears the grid for a new puzzle.
 
+## To Do
+- Fix webview: too big right now
+- Skip to next cell after entering an input
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- 
 ## Screenshots
 ![Screenshot](images/screenshot.png)
