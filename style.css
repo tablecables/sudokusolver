@@ -81,16 +81,6 @@ body {
     cursor: pointer; /* Cursor style for clickable elements */
 }
 
-
-@media (min-width: 600px) {
-    .button-container button {
-        padding: 15px 30px; /* Comfortable padding for desktop */
-        font-size: 7vw; /* Larger fixed font size for readability */
-        min-width: 200px; /* Adjusted minimum width for proportion */
-        margin-bottom: 10px; /* Consistent spacing between buttons */
-    }
-}
-
 .hint-input {
     background-color: #ffff99; /* Yellow background for visibility */
     color: green; /* Different text color if needed */
