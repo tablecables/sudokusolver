@@ -9,86 +9,87 @@ body {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     margin: 20px auto;
-    border-collapse: collapse;    
+    border-collapse: collapse;
 }
 
 #sudoku-grid input {
     width: 10vw;
     height: 10vw;
-    padding-bottom: 11%; /* Adjusted for aspect ratio */
+    padding-bottom: 11%;
     padding-top: 11%;
-    font-size: 5vw; /* Responsive font size */
+    font-size: 5vw;
     text-align: center;
     border: 1px solid grey;
     box-sizing: border-box;
 }
 
-#hint-btn {
-    margin-top: 20px;
-    padding: 5px 15px;
-    font-size: 5vw;
+/* Adjustments for buttons */
+.button-container button {
+    padding: 4vw 8vw;
+    font-size: 7vw;
+    margin-bottom: 2vw;
+    min-width: 60vw;
+    min-height: 8vw;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
 
-#solve-btn {
-    margin-top: 10px;
-    padding: 5px 15px;
-    font-size: 5vw;
-}
-
-#reset-btn {
-    margin-top: 10px;
-    padding: 5px 15px;
-    font-size: 5vw;
-    /* Add any additional styling as needed */
-}
-
-/* Thicker right borders for every third cell */
+/* Thicker borders for cells */
 #sudoku-grid input:nth-child(3n) {
     border-right: 3px solid black;
 }
 
-/* Thicker bottom borders for the 27th, 54th, and 81st cells */
 #sudoku-grid input:nth-child(n+19):nth-child(-n+27),
 #sudoku-grid input:nth-child(n+46):nth-child(-n+54),
 #sudoku-grid input:nth-child(n+73):nth-child(-n+81) {
     border-bottom: 3px solid black;
 }
 
+/* Styling for different input types */
 .original-input {
-    color: black; /* or any color you prefer for original input */
+    color: black;
 }
 
 .solved-input {
-    color: blue; /* or any color you prefer for solved cells */
-}
-
-.button-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.button-container button {
-    padding: 4vw 8vw; /* Adjusted padding */
-    font-size: 7vw; /* Responsive font size */
-    margin-bottom: 2vw; /* Space between buttons */
-    min-width: 60vw; /* Minimum width for larger touch area */
-    min-height: 8vw; /* Minimum height to ensure buttons are easily tappable */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #f0f0f0; /* Light background color */
-    border: 1px solid #ccc; /* Border to define the buttons */
-    cursor: pointer; /* Cursor style for clickable elements */
+    color: blue;
 }
 
 .hint-input {
-    background-color: #ffff99; /* Yellow background for visibility */
-    color: green; /* Different text color if needed */
+    background-color: #ffff99;
+    color: green;
 }
 
 .banner-image {
-    width: 50%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Removes any extra space around the image */
-    margin: 20px auto; /* Space between the banner and the title */
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Media query adjustments for desktop */
+@media (min-width: 600px) {
+    #sudoku-grid {
+        max-width: 450px;
+        grid-gap: 1px;
+        margin: 0 auto;
+    }
+
+    #sudoku-grid input {
+        width: 50px;
+        height: 50px;
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .button-container button {
+        padding: 10px 20px;
+        font-size: 1em; /* Use em for scalable font size */
+        min-width: 120px;
+        min-height: 40px;
+    }
+
+    .banner-image {
+        width: 30%; /* Adjust for desktop */
+    }
 }
